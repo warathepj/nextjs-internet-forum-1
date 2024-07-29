@@ -1,0 +1,18 @@
+
+/* app/components/AddComment.module.css */
+.addButton {
+    /* Add your desired button styles here */
+    background-color: #4CAF50; /* Example green color */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    display: flex;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Add a slight border radius */
+  }
+  

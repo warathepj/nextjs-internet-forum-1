@@ -1,0 +1,37 @@
+/* In LeftNav.module.css */
+.containerLnav {
+    z-index: 1;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially off-screen */
+  width: 200px;
+  height: 100%;
+  padding: 5px;
+
+  background-color: var(--orange);
+  transition: left 0.3s ease; /* Smooth transition */
+}
+
+.containerLnav.open {
+  left: 0; /* Slide in when open */
+}
+.header { /* New class for the header section */
+  display: flex;
+  justify-content: flex-end; /* Push the <h3> to the right */
+}
+.x { /* New class for the header section */
+  background-color: #fff;
+  width: 30px;
+  height: 60px;
+  display: flex;
+  justify-content: flex-end; 
+}
+.topicsCard {
+  margin-top: 5px; 
+  padding-bottom: 30px;
+  height: 46px;
+  /* padding-top: 2px;    */
+  /* padding-bottom: 3px; */
+  background-color: #fff;
+
+}

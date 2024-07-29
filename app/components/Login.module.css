@@ -1,0 +1,28 @@
+/* app/components/Login.module.css */
+.container {
+    z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0px; /* Initially off-screen */
+  width: 370px;
+  height: 100%;
+  padding: 5px;
+
+  background-color: var(--orange);
+  transition: left 1s ease; /* Smooth transition */
+
+}
+.header { /* New class for the header section */
+  display: flex;
+  justify-content: flex-end; /* Push the <h3> to the right */
+}
+.x { /* New class for the header section */
+  background-color: #fff;
+  width: 30px;
+  height: 60px;
+  /* padding-top: -14px; */
+  display: flex;
+  justify-content: flex-end; 
+    cursor: pointer;
+
+}

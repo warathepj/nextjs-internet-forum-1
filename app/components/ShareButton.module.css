@@ -1,0 +1,14 @@
+.container {
+    width: 200px;
+    background-color: #72a4ee;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribute space around elements */
+  align-items: center; /* Vertically center elements */
+  padding: 2px;
+}
+.arrow {
+    font-size: large;
+    cursor: pointer;
+
+}

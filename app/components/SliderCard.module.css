@@ -1,0 +1,27 @@
+.container {
+    background-color: #fff;
+  }
+  .testLabel {
+    position: absolute;
+  
+    top: 50px; /* Adjust position as needed */
+    left: 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    padding: 5px;
+  }
+  .img {
+    position: relative;
+  
+  
+      width: 300px;
+      height: 200px;
+  }
+  .img:nth-child(2) {
+    transform: translateX(10px); /* Adjust the value as needed */
+  }
+  /* SliderCard.module.css */
+  .slick-slide {
+    width: 280px; /* Set width to 80% of viewport width */
+  }
+  

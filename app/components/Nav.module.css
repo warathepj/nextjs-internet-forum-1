@@ -1,0 +1,22 @@
+/* Nav.module.css */
+.container {
+    display: flex;
+    flex-direction: row; /* Align items vertically */
+    justify-content: space-around; /* Center vertically */
+    align-items: center;    /* Center horizontally (optional) */
+    /* ... other styles ... */
+  }
+  
+  .icon {
+      font-size: xx-large;
+      color: var(--light-orange);
+      cursor: pointer; 
+  
+  }
+  
+  .chatProcessing {
+      font-size: 3rem;
+      color: var(--orange);
+      cursor: pointer; 
+  }
+  
