@@ -1,9 +1,15 @@
 // app/components/Login.js/
-import styles from './Login.module.css';
+
+//from app/register/page.jsx/ and
+// context/AuthContext.js/, console.log("registerUser from login", registerUser)
+//in app/components/Login.js/
+
 import { useState, useContext } from 'react';
 import { useLogin } from '../../context/LoginContext';
+import AuthContext from '../../context/AuthContext';
 import { PasswordContext } from '../../context/PasswordContext';
 import { usePassword } from '../../context/PasswordContext';
+import styles from './Login.module.css';
 
 export default function Login() {
   const [username, setUsername] = useState('');
@@ -11,7 +17,10 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState('');
   const { toggleLogin } = useLogin();
   const { toggleLoginButton, passwords } = usePassword();
+  const { registerUser } = useContext(AuthContext);
 
+  console.log("registerUser from login", registerUser);
+  
   const handleSubmit = async (event) => {
     event.preventDefault();
 

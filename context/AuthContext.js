@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
 
   // Function to update the user state (e.g., after successful registration)
   const registerUser = (userData) => {
-    setUser(userData);
+    // setUser(userData);
   };
 
   return (

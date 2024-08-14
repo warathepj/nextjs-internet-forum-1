@@ -1,3 +1,11 @@
+.slide {
+  color: #000;
+  font-size: .7rem;
+
+}
+.topic {
+  width: 300px;
+}
 .container {
     background-color: #fff;
   }
@@ -12,10 +20,14 @@
   }
   .img {
     position: relative;
-  
+    
   
       width: 300px;
       height: 200px;
+  }
+  .img:hover {
+    cursor: pointer;
+
   }
   .img:nth-child(2) {
     transform: translateX(10px); /* Adjust the value as needed */

@@ -20,7 +20,7 @@ export default function Nav() {
   const { isLeftNavOpen, setIsLeftNavOpen } = useLeftNav();
   const { isLoginOpen, setIsLoginOpen } = useLogin();
   console.log("isLeftNavOpen : ", isLeftNavOpen);
-  // const { isLoginButtonOpen } = usePassword();
+  const { isLoginButtonOpen } = usePassword();
   // const { isCreateButtonOpen } = usePassword();
   // console.log("isCreateButtonOpen : ", isCreateButtonOpen);
   const handleMenuClick = () => {
@@ -37,9 +37,9 @@ export default function Nav() {
         {/* <IcSharpMenu className={styles.icon} onClick={toggleLeftNav} /> */}
         <ChatProcessing className={styles.chatProcessing} onClick={() => router.push('/')} />
         {/* hide app/components/Nav */}
-        {/* {isLoginButtonOpen && ( // Use renamed state in conditional rendering */}
-          {/* <Button label="Log In" onClick={handleLoginClick} /> */}
-        {/* )} */}
+        {isLoginButtonOpen && ( // Use renamed state in conditional rendering
+           <Button label="Log In" onClick={handleLoginClick} /> 
+         )} 
         {/* {isCreateButtonOpen && ( // Use renamed state in conditional rendering */}
           {/* <AddComment /> */}
         {/* )} */}

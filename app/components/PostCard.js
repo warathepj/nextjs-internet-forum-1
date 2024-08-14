@@ -18,7 +18,7 @@ import JoinButton from './JoinButton';
 import styles from './PostCard.module.css';
 
 function PostCard({ 
-  id, room, poster, posterId, topic, avatar, content, image 
+  id, room, poster, posterId, topic, avatar, name, content, image 
 }) {
 
   const { posts } = usePosts();
@@ -57,10 +57,11 @@ function PostCard({
           <p key={user.id}>{user.name}</p>
         ))}
       </div> */}
-
-      <p>Poster ID from [id] page : {posterId}</p> 
+      <pre>---------PostCard DEBUG start----------------</pre>
+      {/* <pre>{avatar}</pre> */}
+      {/* <p>Poster ID from [id] page : {posterId}</p>  */}
       {/* NEW */}
-          <p>Post ID: {id}</p>
+          {/* <p>Post ID: {id}</p> */}
       <div className={styles.header}>
         <div className={styles.info}>
           {/* render img in app/components/PostCard.js/, posterId in */}
@@ -69,10 +70,16 @@ function PostCard({
           {posterUser && (
             <img
               src={posterUser.avatar || '/next.svg'}
+              // src={'avatar'}
               alt={`${posterUser.name}'s Avatar`}
               className={styles.avatar}
             />
           )}
+          {/* <img
+            src={avatar} */}
+            {/* // alt={`${posterUser.name}'s Avatar`} */}
+            {/* className={styles.avatar}
+          /> */}
           <div className={styles.postInfoContainer}>
             <div className={styles.postInfo}>
             <p>{room}</p>
@@ -85,6 +92,7 @@ function PostCard({
 
           </div>
         </div>
+        <pre>{name}</pre>
         <JoinButton />
 
       </div>
@@ -100,6 +108,7 @@ function PostCard({
       <ShareButton />
       <AddComment />
       {/* NEW */}
+      <pre>---------PostCard DEBUG end----------------</pre>
       
     </div>
   );

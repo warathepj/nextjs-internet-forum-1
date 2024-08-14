@@ -15,8 +15,8 @@ const UsersProvider = ({ children }) => {
         avatar: "https://plus.unsplash.com/premium_photo-1688045722767-8d8672f6950b?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
         comments: [
             {
-                postId: "",
-                comment: ""
+                postId: "g1",
+                comment: "kkkk"
             }
         ]
 
@@ -49,7 +49,12 @@ const UsersProvider = ({ children }) => {
       id: "5", 
       name: "WanderlustExplorer", 
       avatar: "https://plus.unsplash.com/premium_photo-1664300778169-8a45bfad23be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      comments: [] 
+      comments: [
+        {
+          postId: "v1",
+          comment: "555555555555555"
+        }
+      ] 
     }
   ]);
 

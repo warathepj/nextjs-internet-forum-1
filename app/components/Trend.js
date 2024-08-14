@@ -22,6 +22,8 @@ export default function Trend() {
 // when click app/components/Trend.js
 //when click app/components/Trend.js/
         <Link key={id} href={`/posts/${id}`} className={styles.postCard}>
+          <pre style={{color: 'white'}}>avatar: {avatar}</pre>
+
           <PostCard 
             id={id} 
             avatar={avatar} 

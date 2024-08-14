@@ -9,6 +9,7 @@ import LeftNav from './components/LeftNav';
 import Login from './components/Login';
 import SliderCard from './components/SliderCard';
 import Trend from './components/Trend';
+import LoginAlert from './components/LoginAlert';
 
 import { useState } from 'react';
 import { useMessages } from '../context/MessageContext';
@@ -29,7 +30,7 @@ export default function Home() {
   const { isLeftNavOpen, setIsLeftNavOpen } = useLeftNav();
   console.log("isLeftNavOpen : ", isLeftNavOpen);
   const { isLoginOpen, setIsLoginOpen } = useLogin();
-  // const { passwords } = usePassword();
+  const { passwords } = usePassword();
   // console.log("passwords : ", passwords);
   // const { users } = useContext(UsersContext);
   const { users } = useUsers();
@@ -52,6 +53,10 @@ export default function Home() {
 
   return (
     <>
+    <div className={styles.loginAlert}>
+
+      <LoginAlert />
+    </div>
       {isLoginOpen && <Login />}
       {/* </div> */}
       {/* <Login isOpen={isLoginOpen} /> */}
