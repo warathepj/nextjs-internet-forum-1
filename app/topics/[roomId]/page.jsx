@@ -18,16 +18,77 @@ export default function TopicPage() {
   console.log("param from [roomId]:", param);
   // 12/8 ok
   // const topic = topics.find(t => t === topicId);
-  console.log("posts:", posts);
+  console.log("posts from roomId:", posts);
+  // 14/8 ok array of object all post
   console.log("users from roomId:", users);
-  // 13/8 ok array of object
+  // 16/8 ok array of object all
 //   const messageContent = decodeURIComponent(searchParams.get('content')); 
+const topicPosts = posts.filter((post) => post.room === param);
+console.log("topicPosts from roomId:", topicPosts);
+
+//from app/topics/[id]/page.js, user is in users, log user that have
+// id === topicPosts.posterId
+// Assuming you have topicPosts and users available in this scope
+
+//from app/topics/[id]/page.js
+topicPosts.forEach((post) => {
+  const poster = users.find((user) => user.id === post.posterId);
+  if (poster) {
+    console.log("poster from roomId:", poster);
+    // log separate user (2 object)
+  }
+});
+// render poster.id in pre tag
+
+// const poster = users.filter((user) => user.id === topicPosts.posterId); 
+// console.log("poster from roomId:", poster);
+
 
   return (
     <>
       <pre>----------[roomId] DEBUG start----------------</pre>
       <pre>topicId(params.roomId): {params.roomId}</pre>
-      <pre>.......</pre>
+      <pre>....poster.id...</pre>
+
+<div>
+  {/*topicPosts is array of object of post related to this topic  */}
+  {topicPosts.map((post) => {
+    const poster = users.find((user) => user.id === post.posterId);
+    const topicPostId = post.id;
+    // const avatar = poster.avatar;
+      
+    const avatar = "https://plus.unsplash.com/premium_photo-1664300778169-8a45bfad23be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    const room = post.room;
+    const topic = post.topic;
+    const content = post.content;
+    const posterId = post.posterId;
+    const image = post.image;
+
+    return (
+      <div key={post.id}>
+        {poster && <pre>poster.id: {poster.id}</pre>} 
+        <pre>topicPostId: {topicPostId}</pre>
+        <pre>avatar: {avatar}</pre>
+        {poster && <pre>poster.avatar: {poster.avatar}</pre>} 
+        {/* {topicPosts && <pre>poster.id: {poster.id}</pre>}  */}
+        {/* ... other JSX for post content ... */}
+        {poster && <PostCard 
+id={post.id} 
+avatar={poster.avatar} 
+//     room={room} 
+//     topic={topic} 
+//     content={content} 
+//     posterId={posterId} 
+//     image={image} 
+/>}
+      </div>
+
+    );
+  })}
+</div>
+
+
+      <pre>....poster.id...</pre>
       {/* <pre>All Posts:</pre>  */}
  {/*from app/topics/[id]/page.js, modify */}
       {/* {posts.map(post => (
@@ -47,6 +108,40 @@ export default function TopicPage() {
 ))}
 
       <pre>.......</pre>
+      {/*from app/topics/[id]/page.js, posts and users, 
+      render users.name in pre tag
+      where users.id === posts.posterId */}
+      
+      
+      
+    <div>
+      <pre>param: {param}</pre>
+      {/* {topicPosts.map((post) => { */}
+        {/* const poster = users.find((user) => user.id === post.posterId); */}
+        {/* return ( */}
+          {/* <div key={post.id}> */}
+            {/* {poster && <pre>{poster.name}</pre>} */}
+            {/* {poster && <pre>{poster.avatar}</pre>} */}
+            {/* {poster && */}
+            {/* <PostCard  */}
+             {/* id={post.id}  */}
+              {/* avatar={poster.avatar}  */}
+        {/* //     room={room}  */}
+        {/* //     topic={topic}  */}
+        {/* //     content={content}  */}
+        {/* //     posterId={posterId}  */}
+        {/* //     image={image}  */}
+           {/* />} */}
+          {/* </div> */}
+        {/* ); */}
+      {/* })} */}
+    </div>
+
+      
+      
+      
+      <pre>.......</pre>
+
 <pre>users:</pre> 
 {users.map(user => (
     <pre key={user.id}>
@@ -66,7 +161,7 @@ export default function TopicPage() {
             <pre>poster: </pre>
            <PostCard 
              id={post.id} 
-        //     avatar={avatar} 
+            // avatar={avatar} 
         //     room={room} 
         //     topic={topic} 
         //     content={content} 
