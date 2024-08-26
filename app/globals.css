@@ -11,6 +11,10 @@ body {
   background-color: var(--black);
   color: var(--light-orange);
 }
+
+.login-warning {
+  color: red;
+}
 a {
   text-decoration: none;
 }
@@ -18,3 +22,7 @@ a {
   /* position: absolute; */
 /* position: fixed; */
 /* }  */
+
+.hidden {
+  display: none;
+}

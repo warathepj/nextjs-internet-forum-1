@@ -18,22 +18,22 @@ import JoinButton from './JoinButton';
 import styles from './PostCard.module.css';
 
 function PostCard({ 
-  id, room, poster, posterId, topic, avatar, name, content, image 
+  id, room, sub, poster, posterId, topic, avatar, name, content, image 
 }) {
 
   const { posts } = usePosts();
   // const { posts } = useContext(PostsContext);
   // Find the post with the matching ID
   const post = posts.find(post => post.id === id);
-  console.log("post from PostCard: ", post) // ok it all object
+ // console.log("post from PostCard: ", post) // ok it all object
 
   // Find the user who created the post (using posterId from post)
   const [randomTime, setRandomTime] = useState(0);
   const { users } = useUsers();
-  console.log("users : ", users) // ok it array of object
+  //console.log("users : ", users) // ok it array of object
   // const posterUser = users.find(user => user.id === id);
   const posterUser = users.find(user => user.id === posterId);
-  console.log("posterUser from PostCard : ", posterUser) // undefined
+  //console.log("posterUser from PostCard : ", posterUser) // undefined
   useEffect(() => {
     const generateRandomTime = () => {
       const timeInSeconds = Math.floor(Math.random() * 100_000) + 1;
@@ -62,7 +62,9 @@ function PostCard({
       {/* <p>Poster ID from [id] page : {posterId}</p>  */}
       {/* NEW */}
           {/* <p>Post ID: {id}</p> */}
+      {/* 167 */}
       <div className={styles.header}>
+        {/* 100 */}
         <div className={styles.info}>
           {/* render img in app/components/PostCard.js/, posterId in */}
           {/* context/PostsContext.js same to id in context/UsersContext.js/ */}
@@ -82,7 +84,13 @@ function PostCard({
           /> */}
           <div className={styles.postInfoContainer}>
             <div className={styles.postInfo}>
-            <p>{room}</p>
+              {/* <pre>{avatar}</pre> */}
+              <img
+                src={avatar}
+                // alt={`${posterUser.name}'s Avatar`}
+                className={styles.avatar}
+              />
+            <p>{sub}</p>
               <p> . </p>
               <p>{formattedTime} ago</p>
             </div>
@@ -91,11 +99,14 @@ function PostCard({
           )}
 
           </div>
-        </div>
-        <pre>{name}</pre>
+        </div> 
+        {/* 66 styles.info */}
+        {/* <pre>{name}</pre> */}
         <JoinButton />
 
       </div>
+      {/* styles.header */}
+        <p>{name}</p>
       <p>{topic}</p>
       {post ? <img src={post.image} alt="Post Image" className={styles.image} /> : "No image"}
       <p>{content}</p>

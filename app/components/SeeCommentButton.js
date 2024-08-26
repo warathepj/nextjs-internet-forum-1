@@ -9,7 +9,7 @@ export default function PostButton() {
     return (
 //set width of app/components/VoteButton.js
         <div className={styles.container}>
-<p>SeeCommentButton</p>
+{/* <p>SeeCommentButton</p> */}
 <Chat />
 <p>{Math.floor(Math.random() * 300)}</p>
 

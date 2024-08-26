@@ -1,5 +1,4 @@
 // app/page.jsx/
-// app/page.js/p tag
 'use client'
 import Link from 'next/link';
 import AnnounceCard from './components/AnnounceCard';
@@ -11,7 +10,8 @@ import SliderCard from './components/SliderCard';
 import Trend from './components/Trend';
 import LoginAlert from './components/LoginAlert';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useAuth } from '../context/AuthContext';
 import { useMessages } from '../context/MessageContext';
 import { useTopics } from '../context/TopicsContext';
 import { useLeftNav } from '../context/LeftNavContext';
@@ -23,6 +23,7 @@ import { UsersProvider } from '../context/UsersContext';
 import { UsersContext } from '../context/UsersContext';
 
 import styles from './page.module.css'
+import LoginWarning from './components/LoginWarning';
 
 export default function Home() {
   const { messages } = useMessages();
@@ -30,6 +31,9 @@ export default function Home() {
   const { isLeftNavOpen, setIsLeftNavOpen } = useLeftNav();
   console.log("isLeftNavOpen : ", isLeftNavOpen);
   const { isLoginOpen, setIsLoginOpen } = useLogin();
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  console.log("////////////isLoggedIn////////// : ", isLoggedIn);
+  // const { passwords } = useContext(PasswordContext);
   const { passwords } = usePassword();
   // console.log("passwords : ", passwords);
   // const { users } = useContext(UsersContext);
@@ -53,9 +57,20 @@ export default function Home() {
 
   return (
     <>
+    <div>
+  {isLoggedIn ? (
+    <div>Welcome, user!</div> 
+  ) : (
+    <div>Please log in.</div>
+  )}
+</div>
+
+{/* //from app/page.js/ 
+       isLoggedIn is boolean, how to render */}
+       <pre>isLoggedIn : {isLoggedIn}</pre>
+       {!isLoggedIn && <LoginWarning />}
     <div className={styles.loginAlert}>
 
-      <LoginAlert />
     </div>
       {isLoginOpen && <Login />}
       {/* </div> */}

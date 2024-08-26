@@ -17,6 +17,10 @@ const UsersProvider = ({ children }) => {
             {
                 postId: "g1",
                 comment: "kkkk"
+            },
+            {
+                postId: "v2",
+                comment: "Driving in extremely cold temperatures, like those found at the North Pole, requires specific precautions to ensure your safety and the proper functioning of your vehicle."
             }
         ]
 
@@ -37,13 +41,23 @@ const UsersProvider = ({ children }) => {
       id: "3", 
       name: "AwkwardPenguin", 
       avatar: "https://images.unsplash.com/photo-1462888210965-cdf193fb74de?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      comments: [] 
+      comments: [
+        {
+          postId: "v2",
+          comment: "Use an engine block heater to warm up the engine before starting, especially in extremely cold temperatures. This helps prevent excessive wear and tear."
+        }
+      ] 
     },
     { 
       id: "4", 
       name: "YodaIsMyHomeboy", 
       avatar: "https://images.unsplash.com/photo-1603621760091-d7b12c66549a?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      comments: [] 
+      comments: [
+        {
+          postId: "v2",
+          comment: "Ensure your car battery is in good condition and has a sufficient charge. Cold weather can significantly reduce battery life.",
+        }
+      ] 
     },
     { 
       id: "5", 

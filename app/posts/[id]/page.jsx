@@ -48,27 +48,63 @@ export default function PostsPage() {
 
   return (
     <div>
-      <pre>-----DEBUG------</pre>
+      {/* <pre>-----DEBUG------</pre> */}
       <div>
-        <pre>++++Commenters on this post:++++</pre>
-        {commenters.map(user => (
+        {/* <pre>++++Commenters on this post:++++</pre> */}
+        {/* {commenters.map(user => (
           <pre key={user.id}>{user.name}</pre>
-        ))}
+        ))} */}
         {/*  */}
-        <pre>++++Commenters on this post:++++</pre>
+        {/* <pre>++++Commenters on this post:++++</pre> */}
 
       </div>
-      <pre>-----DEBUG------</pre>
-      {/* fusion line 48 and 103 */}
-      {users.map(user => (
+      {/* <pre>-----DEBUG------</pre> */}
+      {/* {users.map(user => (
         user.comments.filter(comment => comment.postId === postId).map(comment => (
           <pre key={comment.id}>
             postId: {comment.postId}
             comment: {comment.comment}
           </pre>
         ))
-      ))}
-      <pre>-----new CommentCard------</pre>
+      ))} */}
+      {/* <pre>-----new CommentCard------</pre> */}
+      {/* {users.map(user => (
+        user.comments.filter(comment => comment.postId === postId).map(comment => (
+          <div>
+            <CommentCard
+              key={user.id}
+              commenterName={user.name}
+              avatar={user.avatar}
+              comments={comment.comment}
+            />
+          </div>
+
+        ))
+      ))} */}
+      
+      {/* <pre>Post ID from posts/[id] params: {postId}</pre>
+
+      <pre>post.posterId from posts/[id]: {post.posterId}</pre>
+      <pre>post.sub: {post.sub}</pre> */}
+      {/* <pre>poster.avatar: {poster.avatar}</pre> */}
+      {/* <pre>poster.name: {poster.name}</pre> */}
+      {/* from app/posts/[id]/page.js/ 
+log context/UsersContext.js/users that users.id === post.posterId*/}
+
+      {/* posterId */}
+      
+
+      <p>Post ID: {postId}</p>
+      <PostCard id={post.id} avatar={poster.avatar} 
+        name={poster.name}
+        room={post.room} 
+        sub={post.sub} 
+        poster={post.poster}
+        topic={post.topic} content={post.content} image={post.image} 
+      />
+
+      <h2>Comments:</h2>
+      <pre>@@@@@CommentCard with props@@@@@</pre>
       {users.map(user => (
         user.comments.filter(comment => comment.postId === postId).map(comment => (
           <div>
@@ -82,43 +118,16 @@ export default function PostsPage() {
 
         ))
       ))}
-      
-      <pre>Post ID from posts/[id] params: {postId}</pre>
-
-      <pre>post.posterId from posts/[id]: {post.posterId}</pre>
-      {/* <pre>poster.avatar: {poster.avatar}</pre> */}
-      {/* <pre>poster.name: {poster.name}</pre> */}
-      {/* from app/posts/[id]/page.js/ 
-log context/UsersContext.js/users that users.id === post.posterId*/}
-
-      {/* posterId */}
-      
-
-      <p>Post ID: {postId}</p>
-      <PostCard id={post.id} avatar={poster.avatar} 
-        name={poster.name}
-        room={post.room}  
-        poster={post.poster}
-        topic={post.topic} content={post.content} image={post.image} 
-      />
-
-      <h2>Comments:</h2>
+      {/* {postCommenters.map(user => ( // line 48 */}
+        {/* <CommentCard */}
+          {/* key={user.id} */}
+          {/* commenterName={user.name} */}
+          {/* avatar={user.avatar} */}
+        {/* // comments={user.comments.filter(comment => comment.postId === postId)}  */}
+        {/* /> */}
+      {/* ))} */}
       <pre>@@@@@CommentCard with props@@@@@</pre>
-
-      {postCommenters.map(user => ( // line 48
-        <CommentCard
-          key={user.id}
-          commenterName={user.name}
-          avatar={user.avatar}
-        // comments={user.comments.filter(comment => comment.postId === postId)} 
-        />
-      ))}
-      <pre>@@@@@CommentCard with props@@@@@</pre>
-      <pre>//////CommentCard no props////////</pre>
-      <CommentCard />
-      <pre>////////CommentCard no props/////////</pre>
-      {/* <PostCard id={postId} avatar={avatar} /> */}
-      {/* ... other content for your PostsPage ... */}
+      
     </div>
   );
 }

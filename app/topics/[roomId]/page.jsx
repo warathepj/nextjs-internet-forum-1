@@ -55,9 +55,10 @@ topicPosts.forEach((post) => {
   {topicPosts.map((post) => {
     const poster = users.find((user) => user.id === post.posterId);
     const topicPostId = post.id;
-    // const avatar = poster.avatar;
+    const sub = post.sub;
+    const avatar = poster.avatar;
       
-    const avatar = "https://plus.unsplash.com/premium_photo-1664300778169-8a45bfad23be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+    // const avatar = "https://plus.unsplash.com/premium_photo-1664300778169-8a45bfad23be?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
     const room = post.room;
     const topic = post.topic;
     const content = post.content;
@@ -68,15 +69,16 @@ topicPosts.forEach((post) => {
       <div key={post.id}>
         {poster && <pre>poster.id: {poster.id}</pre>} 
         <pre>topicPostId: {topicPostId}</pre>
+        <pre>sub: {sub}</pre>
         <pre>avatar: {avatar}</pre>
         {poster && <pre>poster.avatar: {poster.avatar}</pre>} 
         {/* {topicPosts && <pre>poster.id: {poster.id}</pre>}  */}
         {/* ... other JSX for post content ... */}
         {poster && <PostCard 
 id={post.id} 
-avatar={poster.avatar} 
-//     room={room} 
-//     topic={topic} 
+avatar={avatar} 
+    sub={sub} 
+    topic={topic} 
 //     content={content} 
 //     posterId={posterId} 
 //     image={image} 
@@ -174,6 +176,8 @@ avatar={poster.avatar}
       <pre>.....</pre>
 
       <pre>----------[roomId] DEBUG end--------------</pre>
+      <h3>{params.roomId}</h3>
+
       <h1>Topic Page</h1>
       {/* <p>topic ID: {topicId}</p> */}
       {/* {topic && <p>topic content: {topic}</p>}  */}

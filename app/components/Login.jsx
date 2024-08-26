@@ -3,45 +3,58 @@
 //from app/register/page.jsx/ and
 // context/AuthContext.js/, console.log("registerUser from login", registerUser)
 //in app/components/Login.js/
-
+"use client"
 import { useState, useContext } from 'react';
 import { useLogin } from '../../context/LoginContext';
 import AuthContext from '../../context/AuthContext';
 import { PasswordContext } from '../../context/PasswordContext';
 import { usePassword } from '../../context/PasswordContext';
 import styles from './Login.module.css';
+import { useAuth } from '../../context/AuthContext';
+
 
 export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [user, setUser] = useState('User Name');
+  const [pass, setPass] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  const { toggleLogin } = useLogin();
+  const { toggleLogin, setIsLoginOpen } = useLogin();
   const { toggleLoginButton, passwords } = usePassword();
-  const { registerUser } = useContext(AuthContext);
-
-  console.log("registerUser from login", registerUser);
+  const { username, password, login, logout } = useAuth();
+  console.log("username from login", username);
+  console.log("password from login", password);
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  console.log("isLoggedIn from login", isLoggedIn);
   
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  //in app/components/Login.js/, set state of
+//to context/AuthContext.js/
 
-    // Here you would typically make an API call to your backend to authenticate the user.
+  // const { registerUser } = useContext(AuthContext);
 
-    // For now, let's just log the submitted credentials.
-    console.log('Submitted credentials:', { username, password });
-    // if app/components/Login.js/
-    if (passwords.includes(password)) {
-      // Valid password
-      console.log('Login successful!');
-      setErrorMessage(''); // Clear any previous error message
-      setUsername('');
-      setPassword('');
-      toggleLogin(); // Close the login modal
-      toggleLoginButton();
-    } else {
-      // Invalid password
-      setErrorMessage('Incorrect password');
+  // console.log("registerUser from login", registerUser);
+
+  //from app/components/Login.js/
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+    // setIsLoginOpen(false);
+    // ... your login logic (e.g., API call) ...
+    //setIsLoggedIn(true); // Set isLoggedIn to true after successful login
+    // if (!isLoggedIn) {
+    //   console.log("Incorrect username or password");
+    // }
+    
+    
+  };
+
+  const handleLogin = () => {
+    if (user === username && pass === password) {
+      setIsLoggedIn(true);
+      setIsLoginOpen(false);
     }
   };
+
+  
+  // if isLoggedIn = false; then alert "incorrect username or password"
+  
 
   return (
     <div className={styles.container}>
@@ -50,30 +63,42 @@ export default function Login() {
           <h1>X</h1>
         </div>
       </div>
+
+{/* //from app/components/Login.js/ */}
+{isLoggedIn && (
+        <pre>logged in!!</pre>
+      )}
+      {/* if isLoggedIn = false, render "not logged in" in pre tag */}
+      {!isLoggedIn && (
+        <pre>not logged in!!</pre>
+      )}
+{/* //from app/components/Login.js/ */}
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="user">Username:</label>
           <input
             type="text"
             id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={user}
+            onChange={(e) => setUser(e.target.value)}
 
             required
           />
         </div>
         <div>
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="pass">Password:</label>
           <input
             type="password"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={pass}
+            onChange={(e) => setPass(e.target.value)}
             required
           />
         </div>
+{/* //when press app/components/Login.js/ */}
         <button type="submit">Login</button>
+        {/* set isLoggedIn to true */}
         {errorMessage && <p className={styles.error}>{errorMessage}</p>}
       </form>
       <a href="/register">Register</a>

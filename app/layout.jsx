@@ -1,6 +1,9 @@
 
 
 // app/layout/
+              
+              //from app/layout/ initial hide <UserProfile />
+              
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from '../context/AuthContext';
@@ -9,6 +12,7 @@ import { TopicsProvider } from '../context/TopicsContext';
 import { PostsProvider } from '../context/PostsContext';
 import { PasswordProvider } from '../context/PasswordContext';
 import { UsersProvider } from '../context/UsersContext';
+import { Providers } from './providers';
 import Nav from './components/Nav';
 import ClientWrapper from './client-wrapper';
 
@@ -23,6 +27,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+      <Providers>
       <AuthProvider>
         <PasswordProvider>
     <UsersProvider>
@@ -30,11 +35,7 @@ export default function RootLayout({ children }) {
         <MessageProvider>
           <TopicsProvider>
             <ClientWrapper>
-              {/* <div className="nav"> */}
-
-              {/* <Nav className="nav" /> */}
               <Nav />
-              {/* </div> */}
               {children}
             </ClientWrapper>
           </TopicsProvider>
@@ -43,7 +44,7 @@ export default function RootLayout({ children }) {
         </UsersProvider>
         </PasswordProvider>
     </AuthProvider>
-
+    </Providers>
       </body>
     </html>
   );

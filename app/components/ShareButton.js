@@ -9,7 +9,7 @@ export default function PostButton() {
     return (
 //set width of app/components/VoteButton.js
         <div className={styles.container}>
-<p>ShareButton</p>
+{/* <p>ShareButton</p> */}
 <Share />
 
         </div>

@@ -10,6 +10,7 @@ export const PostsProvider = ({ children }) => {
     {
       id: "v1",
       room: "Vehicles",
+      sub: "Train",
       posterId: "1",
       topic: "Is it feasible to create a world where the primary mode of transportation is trains, to the exclusion of automobiles and aircraft?",
       content: "Crafting a world that seamlessly blends fantasy and technology can be tricky. This project aims for a unique atmosphere with trains powered by magic, traditional travel options, and a focus on medieval weaponry alongside fantastical creatures. The key is to ensure technology feels limited.  Imagine enchanted lanterns instead of electricity, and dwarven societies leading the way in intricate clockwork thanks to their advanced metalworking. Perhaps magic itself fuels these advancements, with alchemists or magical tools creating rudimentary machines. By establishing clear rules for both magic and technology, their interaction, and any limitations, you can create a world where the fantastical and the technological coexist in perfect harmony.  ",
@@ -19,8 +20,8 @@ export const PostsProvider = ({ children }) => {
       id: "v2",
       room: "Vehicles",
       posterId: "2",
-      topic: "n of automobiles and aircraft?",
-      content: "asdfgh",
+      topic: "What precautions should you take when using a car in extremely low temperatures such as the North Pole?",
+      content: "",
       image: "https://images.unsplash.com/photo-1517676109075-9a94d44145d1?q=80&w=1287&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {

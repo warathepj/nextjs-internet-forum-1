@@ -23,7 +23,7 @@ export default function PostButton() {
     return (
 //set width of app/components/VoteButton.js
         <div className={styles.container}>
-<p>VoteButton</p>
+{/* <p>VoteButton</p> */}
 {/* fit to 3 element inside */}
 {/*when click on app/components/VoteButton.js */}
             <button className={styles.arrow} onClick={handleUpvote} disabled={hasVoted}>
