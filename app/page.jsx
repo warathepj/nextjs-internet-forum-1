@@ -2,7 +2,7 @@
 'use client'
 import Link from 'next/link';
 import AnnounceCard from './components/AnnounceCard';
-import Announce from './components/Announce';
+// import Announce from './components/Announce';
 import TopicsCard from './components/TopicsCard';
 import LeftNav from './components/LeftNav';
 import Login from './components/Login';
@@ -57,13 +57,13 @@ export default function Home() {
 
   return (
     <>
-    <div>
+    {/* <div>
   {isLoggedIn ? (
     <div>Welcome, user!</div> 
   ) : (
     <div>Please log in.</div>
   )}
-</div>
+</div> */}
 
 {/* //from app/page.js/ 
        isLoggedIn is boolean, how to render */}
@@ -90,7 +90,7 @@ export default function Home() {
       </div>
 
       <Trend />
-      <Announce />
+      <AnnounceCard />
       {/* {messages.map(message => (
         <Link 
           key={message.id} 

@@ -1,8 +1,11 @@
 // app/components/AddComment.js
-import React from 'react';
+import { useAuth } from '../../context/AuthContext';
 import styles from './AddComment.module.css'; // Import CSS module if needed
 
 export default function AddComment() {
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+
+  if (isLoggedIn) {
   return (
     <div>
       <button className={styles.addButton}>
@@ -18,4 +21,7 @@ export default function AddComment() {
     {/* Other content of the AddComment component */ }
     </div >
   );
+} else {
+  return <div className={styles.addButton}>Please register to add a comment.</div>;
+}
 }

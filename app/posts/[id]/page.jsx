@@ -1,15 +1,11 @@
 // app/posts/[id]/page.js/
 
-// from app/posts/[id]/page.js/, change this to code 
-// "poster is users in UsersContext that have id === posterId in PostsContext"
 "use client"
 import { useParams } from 'next/navigation';
 import { usePosts } from '../../../context/PostsContext';
 import { useUsers } from '../../../context/UsersContext';
 import CommentCard from '@/app/components/CommentCard';
 import PostCard from '../../components/PostCard';
-
-
 
 export default function PostsPage() {
   const params = useParams(); // Get the URL parameters
@@ -18,11 +14,7 @@ export default function PostsPage() {
   const { users } = useUsers();
   const post = posts.find(post => post.id === postId);
   const poster = users.find(user => user.id === post.posterId);
-  // users.comments.postId === postId
   console.log("users from posts/[id]: ", users) // 9/8 ok it array of object(all users)
-  // 
-  // render users.comments.postId in app/posts/[id]/page.js/pre tag
-  // reference file context/UsersContext
   console.log("poster from posts/[id]: ", poster) // 9/8 undefine
 
   //from app/posts/[id]/page.js/
@@ -48,7 +40,6 @@ export default function PostsPage() {
 
   return (
     <div>
-      {/* <pre>-----DEBUG------</pre> */}
       <div>
         {/* <pre>++++Commenters on this post:++++</pre> */}
         {/* {commenters.map(user => (

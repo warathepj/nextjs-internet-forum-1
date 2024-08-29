@@ -7,6 +7,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from '../context/AuthContext';
+import { AnnounceProvider } from '../context/AnnounceContext';
 import { MessageProvider } from '../context/MessageContext';
 import { TopicsProvider } from '../context/TopicsContext';
 import { PostsProvider } from '../context/PostsContext';
@@ -15,6 +16,8 @@ import { UsersProvider } from '../context/UsersContext';
 import { Providers } from './providers';
 import Nav from './components/Nav';
 import ClientWrapper from './client-wrapper';
+import Welcome from "./components/Welcome";
+import GotoTop from "./components/GotoTop";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,14 +35,18 @@ export default function RootLayout({ children }) {
         <PasswordProvider>
     <UsersProvider>
         <PostsProvider>
+          <AnnounceProvider>
         <MessageProvider>
           <TopicsProvider>
             <ClientWrapper>
               <Nav />
+              <Welcome />
               {children}
+              <GotoTop/>
             </ClientWrapper>
           </TopicsProvider>
         </MessageProvider>
+        </AnnounceProvider>
         </PostsProvider>
         </UsersProvider>
         </PasswordProvider>

@@ -1,12 +1,15 @@
 // app/components/VoteButton.js
 import { useState } from 'react';
+import { useAuth } from '../../context/AuthContext';
 import ArrowUp from './(icon)/ArrowUp';
 import ArrowDown from './(icon)/ArrowDown';
 import styles from './VoteButton.module.css';
 
-export default function PostButton() {
+export default function VoteButton() {
     const [count, setCount] = useState(Math.floor(Math.random() * 1000)); // Initialize count state
     const [hasVoted, setHasVoted] = useState(false);
+  const { isLoggedIn, setIsLoggedIn } = useAuth();
+
     const handleUpvote = () => {
         if (!hasVoted) { // Check if already voted
           setCount(count + 1);
@@ -20,12 +23,13 @@ export default function PostButton() {
         }
       };
 
+      if (isLoggedIn) {
     return (
-//set width of app/components/VoteButton.js
         <div className={styles.container}>
-{/* <p>VoteButton</p> */}
-{/* fit to 3 element inside */}
-{/*when click on app/components/VoteButton.js */}
+
+{/* //in app/components/VoteButton.js */}
+{/* if isLoggedIn is true, can click two button,
+ else render Please register !!*/}
             <button className={styles.arrow} onClick={handleUpvote} disabled={hasVoted}>
                 <ArrowUp />
             </button>
@@ -39,5 +43,11 @@ export default function PostButton() {
             </button>
         </div>
       );
+    } else {
+      return <div className={styles.container}>
+                <p>{count} votes</p>
+              <p>Please register to vote!</p>
+        </div>;
+    }
 }
 

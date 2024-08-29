@@ -16,7 +16,7 @@ const UsersProvider = ({ children }) => {
         comments: [
             {
                 postId: "g1",
-                comment: "kkkk"
+                comment: "Use with a neck strap."
             },
             {
                 postId: "v2",
@@ -56,7 +56,11 @@ const UsersProvider = ({ children }) => {
         {
           postId: "v2",
           comment: "Ensure your car battery is in good condition and has a sufficient charge. Cold weather can significantly reduce battery life.",
-        }
+        },
+        {
+          postId: "g1",
+          comment: "Being a clumsy person, I know myself that no matter what, I will definitely drop it on the floor. Normally we use Airpod Pro and put in an extra shockproof case.When I take it out and use it, it secretly falls off sometimes, but having said that, it holds up well.",
+        },
       ] 
     },
     { 
@@ -67,6 +71,10 @@ const UsersProvider = ({ children }) => {
         {
           postId: "v1",
           comment: "555555555555555"
+        },
+        {
+          postId: "g1",
+          comment: "Used to be, but only very small ones. These days, Bluetooth has grown in size as well. with our ear grooves, making it firm but not easy to fall out Anyway, choose to look at the big ones."
         }
       ] 
     }
