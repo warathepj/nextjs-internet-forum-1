@@ -1,8 +1,8 @@
 // app/components/PostCard.js/
-// from app/components/PostCard.js/ render users in p tag
 
 // import React from 'react';
 import { useEffect, useRef, useState, useContext } from 'react';
+import { useParams } from 'next/navigation';
 import { usePosts } from '../../context/PostsContext';
 import { useUsers } from '../../context/UsersContext';
 import { UsersProvider } from '../../context/UsersContext';
@@ -20,7 +20,8 @@ import styles from './PostCard.module.css';
 function PostCard({ 
   id, room, sub, poster, posterId, topic, avatar, name, content, image 
 }) {
-
+  const params = useParams(); // Get the URL parameters
+  const postId = params.postId;
   const { posts } = usePosts();
   // const { posts } = useContext(PostsContext);
   // Find the post with the matching ID
@@ -34,6 +35,8 @@ function PostCard({
   // const posterUser = users.find(user => user.id === id);
   const posterUser = users.find(user => user.id === posterId);
   //console.log("posterUser from PostCard : ", posterUser) // undefined
+  const paragraphs = content.split('/'); 
+
   useEffect(() => {
     const generateRandomTime = () => {
       const timeInSeconds = Math.floor(Math.random() * 100_000) + 1;
@@ -58,6 +61,7 @@ function PostCard({
         ))}
       </div> */}
       <pre>---------PostCard DEBUG start----------------</pre>
+      <pre>PPPPPPPPPPPPPpostId from PostCard : {postId}</pre>
       {/* <pre>{avatar}</pre> */}
       {/* <p>Poster ID from [id] page : {posterId}</p>  */}
       {/* NEW */}
@@ -106,10 +110,17 @@ function PostCard({
 
       </div>
       {/* styles.header */}
+      <pre>aaaaaaaaaaaaa</pre>
         <p>{name}</p>
       <p>{topic}</p>
       {post ? <img src={post.image} alt="Post Image" className={styles.image} /> : "No image"}
-      <p>{content}</p>
+
+      {paragraphs.map((paragraph, index) => (
+        <p key={index}>{paragraph}</p>
+      ))}
+      {/* // from app/components/PostCard.js/ when find "/" in */}
+      {/* <p>{content}</p> */}
+      {/* break to new line */}
       <VoteButton />
       {/* when click app/components/PostCard.js/ */}
       <Link href={`/posts/${id}`}> {/* Wrap SeeCommentButton with Link */}
@@ -117,7 +128,9 @@ function PostCard({
       </Link>
       {/* go to posts/{id} */}
       <ShareButton />
+      <Link href={`/posts/${postId}/add-comment`}>
       <AddComment />
+      </Link>
       {/* NEW */}
       <pre>---------PostCard DEBUG end----------------</pre>
       

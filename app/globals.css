@@ -26,3 +26,26 @@ a {
 .hidden {
   display: none;
 }
+
+.overlay {
+  width: calc(100vw - 200px); 
+  position: fixed;
+  top: -250px;
+  left: 200px;
+  height: 800px;
+  z-index: 2; /* Ensure it's above the main content but below the LeftNav */
+
+  background-color: rgba(223, 95, 95, 0.5); /* Adjust opacity as needed */
+
+}
+
+.overlay.active {
+  display: block;
+}
+
+.avatar {
+  width: 50px; /* Adjust the size as needed */
+  height: 50px;
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fills the circle without distortion */
+}

@@ -4,23 +4,19 @@ import { useAuth } from '../../context/AuthContext';
 
 export default function Register() {
     const router = useRouter();
-    const { username, setUsername, password, setPassword, registerUser } = useAuth();
+    const { username, setUsername, registerUser } = useAuth();
 
     const handleUsernameChange = (event) => {
         setUsername(event.target.value);
     };
 
-    const handlePasswordChange = (event) => {
-        setPassword(event.target.value);
-    };
-
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (username.trim() === '' || password.trim() === '') {
+        if (username.trim() === '') {
             return;
         }
         try {
-            await registerUser({ username, password });
+            await registerUser({ username });
             router.push('/');
         } catch (error) {
             // Handle error
@@ -36,16 +32,9 @@ export default function Register() {
                     name="username"
                     value={username}
                     onChange={handleUsernameChange}/>
-                <label htmlFor="password">Password:</label>
-                <input
-                    value={password}
-                    type="password" id="password" name="password"
-                    onChange={handlePasswordChange}    
-                />
                 <button type="submit">Register</button>
             </form>
             <pre>username: {username}</pre>
-            <pre>password: {password}</pre>
         </>
     );
 }

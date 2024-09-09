@@ -7,6 +7,7 @@ import Button from './Button';
 import Link from 'next/link'; 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '../../context/AuthContext';
 import { useLeftNav } from '../../context/LeftNavContext';
 import { useLogin } from '../../context/LoginContext';
 import { usePassword } from '../../context/PasswordContext';
@@ -14,14 +15,13 @@ import AddComment from './AddComment';
 
 
 export default function Nav() {
+  const { username } = useAuth();
 
   // const [isLeftNavOpen, setIsLeftNavOpen] = useState(false);
   const buttonText = "Log In";
   const router = useRouter();
   const { isLeftNavOpen, setIsLeftNavOpen } = useLeftNav();
-  const { isLoginOpen, setIsLoginOpen } = useLogin();
   console.log("isLeftNavOpen : ", isLeftNavOpen);
-  const { isLoginButtonOpen } = usePassword();
   // const { isCreateButtonOpen } = usePassword();
   // console.log("isCreateButtonOpen : ", isCreateButtonOpen);
   const handleMenuClick = () => {
@@ -43,8 +43,10 @@ export default function Nav() {
           )}  */}
 
 {/* //add Link to app/components/Nav */}
+{/* //initial show app/components/Nav/ */}
 <Link href="/register">
-  <Button label="Register" /> 
+  { !username && <Button label="Register" /> }
+  {/* when isLoggedin is true, hide Button */}
 </Link>
           {/* to go to /register */}
         {/* {isCreateButtonOpen && ( // Use renamed state in conditional rendering */}

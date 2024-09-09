@@ -6,15 +6,12 @@ const AuthContext = createContext();
 export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
-  const registerUser = async ({ username, password }) => {
+  const registerUser = async ({ username }) => {
     // Implement your registration logic here
     // For example:
     // await api.register(username, password);
     setUsername(username);
-    setPassword(password);
-    setIsLoggedIn(true);
   };
 
   return (
@@ -23,8 +20,6 @@ export function AuthProvider({ children }) {
       setIsLoggedIn, 
       username, 
       setUsername, 
-      password, 
-      setPassword,
       registerUser 
     }}>
       {children}

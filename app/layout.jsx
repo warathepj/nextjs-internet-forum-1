@@ -1,18 +1,23 @@
 
 
 // app/layout/
-              
-              //from app/layout/ initial hide <UserProfile />
-              
+
+//from app/layout/ initial hide <UserProfile />
+
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from '../context/AuthContext';
 import { AnnounceProvider } from '../context/AnnounceContext';
 import { MessageProvider } from '../context/MessageContext';
 import { TopicsProvider } from '../context/TopicsContext';
+import { PostProvider } from '../context/UserPostContext';
 import { PostsProvider } from '../context/PostsContext';
 import { PasswordProvider } from '../context/PasswordContext';
 import { UsersProvider } from '../context/UsersContext';
+import { CommentProvider } from '../context/UserCommentContext';
+import { UserCommentContext } from '../context/UserCommentContext';
+import { WriteProvider } from "../context/WriteContext";
+
 import { Providers } from './providers';
 import Nav from './components/Nav';
 import ClientWrapper from './client-wrapper';
@@ -30,28 +35,36 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <Providers>
-      <AuthProvider>
-        <PasswordProvider>
-    <UsersProvider>
-        <PostsProvider>
-          <AnnounceProvider>
-        <MessageProvider>
-          <TopicsProvider>
-            <ClientWrapper>
-              <Nav />
-              <Welcome />
-              {children}
-              <GotoTop/>
-            </ClientWrapper>
-          </TopicsProvider>
-        </MessageProvider>
-        </AnnounceProvider>
-        </PostsProvider>
-        </UsersProvider>
-        </PasswordProvider>
-    </AuthProvider>
-    </Providers>
+      <WriteProvider>
+
+      <PostProvider>
+      <CommentProvider>
+        <Providers>
+          <AuthProvider>
+            <PasswordProvider>
+              <UsersProvider>
+                <PostsProvider>
+                  <AnnounceProvider>
+                    <MessageProvider>
+                      <TopicsProvider>
+                        <ClientWrapper>
+                          <Nav />
+                          <Welcome />
+                          {children}
+                          <GotoTop />
+                        </ClientWrapper>
+                      </TopicsProvider>
+                    </MessageProvider>
+                  </AnnounceProvider>
+                </PostsProvider>
+              </UsersProvider>
+            </PasswordProvider>
+          </AuthProvider>
+        </Providers>
+        </CommentProvider>
+        </PostProvider>
+        </WriteProvider>
+
       </body>
     </html>
   );

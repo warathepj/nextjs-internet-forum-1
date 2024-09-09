@@ -3,12 +3,13 @@ import { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import ArrowUp from './(icon)/ArrowUp';
 import ArrowDown from './(icon)/ArrowDown';
+import Link from 'next/link';
 import styles from './VoteButton.module.css';
 
 export default function VoteButton() {
     const [count, setCount] = useState(Math.floor(Math.random() * 1000)); // Initialize count state
     const [hasVoted, setHasVoted] = useState(false);
-  const { isLoggedIn, setIsLoggedIn } = useAuth();
+  const { username } = useAuth();
 
     const handleUpvote = () => {
         if (!hasVoted) { // Check if already voted
@@ -23,7 +24,7 @@ export default function VoteButton() {
         }
       };
 
-      if (isLoggedIn) {
+      if (username) {
     return (
         <div className={styles.container}>
 
@@ -46,7 +47,14 @@ export default function VoteButton() {
     } else {
       return <div className={styles.container}>
                 <p>{count} votes</p>
-              <p>Please register to vote!</p>
+                <p 
+          className={styles.addButton}
+        >
+          Please 
+          <Link 
+            href="/register"
+          >
+            register</Link> to add a comment.</p>;
         </div>;
     }
 }

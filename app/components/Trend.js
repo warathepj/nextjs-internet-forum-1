@@ -18,52 +18,36 @@ export default function Trend() {
   const { posts } = usePosts();
   const { users } = useUsers();
 
-  //in app/components/Trend.js/
-  // const post = posts.map(p => {
-  //   const room = p.room;
-  //   return post;
-  // });
-  // const postElements = posts.map(r => {
-  //   let room = r.room;
-  //   return <pre key={room}>{room}</pre>;
-  // });
-  // render room in pre tag
-
-  // const post = posts.find(post => post.id === postId);
-  // const poster = users.find(user => user.id === post.posterId);
-
-
-
   return (
     <div className={styles.container}>
       <p>trend</p>
       <pre>
         {/* {post.room} */}
       </pre>
-      <pre>{JSON.stringify(posts, null, 2)}</pre>
-      <pre>
+      {/* <pre>{JSON.stringify(posts, null, 2)}</pre> */}
+      {/* <pre>
         {posts.map(post => (
           <div key={post.id}>post.posterId: {post.posterId}</div>
         ))}
-      </pre>
+      </pre> */}
       {/* to render users name that have id === post.posterId */}
 
 
       {/* //in app/components/Trend.js/ modify*/}
-      <pre>
+      {/* <pre>
         {posts.map(post => (
           <div key={post.id}>
             {users.find(user => user.id === post.posterId)?.name || "Unknown User"}: {post.posterId}
           </div>
         ))}
-      </pre>
+      </pre> */}
 
 
-      <pre>{JSON.stringify(users, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(users, null, 2)}</pre> */}
 
         {/* /////////////// */}
 
-        <pre>
+        {/* <pre> */}
         {posts.map(post => {
           const user = users.find(user => user.id === post.posterId);
           return (
@@ -81,7 +65,7 @@ export default function Trend() {
             />
           )
         })}
-      </pre>
+      {/* </pre> */}
 
 
 

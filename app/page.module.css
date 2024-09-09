@@ -1,8 +1,8 @@
 /* app/page.module.css */
 
-.leftNav {
+/* .leftNav {
   z-index: 10;
-}
+} */
 /* .sliderCard {
   position: absolute;
 } */
@@ -21,21 +21,6 @@
   left: 300px;
   height: 500px;
   z-index: 10; /* Ensure it's above the main content but below the LeftNav */
-}
-.overlay {
-  width: calc(100vw - 200px); 
-  position: fixed;
-  top: -250px;
-  left: 200px;
-  height: 800px;
-  z-index: 2; /* Ensure it's above the main content but below the LeftNav */
-
-  background-color: rgba(223, 95, 95, 0.5); /* Adjust opacity as needed */
-
-}
-
-.overlay.active {
-  display: block;
 }
 
 

@@ -1,19 +1,26 @@
-// app/posts/[id]/page.js/
+// app/posts/[postId]/page.js/
 
 "use client"
 import { useParams } from 'next/navigation';
 import { usePosts } from '../../../context/PostsContext';
 import { useUsers } from '../../../context/UsersContext';
+// import { useComment } from '../../../context/CommentContext';
+
 import CommentCard from '@/app/components/CommentCard';
 import PostCard from '../../components/PostCard';
+import UserComment from '../../components/UserComment';
 
 export default function PostsPage() {
   const params = useParams(); // Get the URL parameters
-  const postId = params.id;  // Extract the 'id'
+  const postId = params.postId;  // Extract the 'id'
   const { posts } = usePosts();
   const { users } = useUsers();
   const post = posts.find(post => post.id === postId);
   const poster = users.find(user => user.id === post.posterId);
+
+  // const { comment, setComment } = useComment();
+  
+
   console.log("users from posts/[id]: ", users) // 9/8 ok it array of object(all users)
   console.log("poster from posts/[id]: ", poster) // 9/8 undefine
 
@@ -95,6 +102,7 @@ log context/UsersContext.js/users that users.id === post.posterId*/}
       />
 
       <h2>Comments:</h2>
+      <UserComment/>
       <pre>@@@@@CommentCard with props@@@@@</pre>
       {users.map(user => (
         user.comments.filter(comment => comment.postId === postId).map(comment => (

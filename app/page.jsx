@@ -57,7 +57,7 @@ export default function Home() {
 
   return (
     <>
-    {/* <div>
+      {/* <div>
   {isLoggedIn ? (
     <div>Welcome, user!</div> 
   ) : (
@@ -65,26 +65,24 @@ export default function Home() {
   )}
 </div> */}
 
-{/* //from app/page.js/ 
+      {/* //from app/page.js/ 
        isLoggedIn is boolean, how to render */}
-       <pre>isLoggedIn : {isLoggedIn}</pre>
-       {!isLoggedIn && <LoginWarning />}
-    <div className={styles.loginAlert}>
+      {/* <pre>isLoggedIn : {isLoggedIn}</pre> */}
+      {/* {!isLoggedIn && <LoginWarning />} */}
+      <div className={styles.loginAlert}>
 
-    </div>
-      {isLoginOpen && <Login />}
+      </div>
+      {/* {isLoginOpen && <Login />} */}
       {/* </div> */}
       {/* <Login isOpen={isLoginOpen} /> */}
+
       {isLeftNavOpen && (
-        <div className={styles.overlay}></div>
+        <div className="overlay"></div>
       )}
       <div className={styles.sliderCard}>
         <div className={styles.leftNav}>
-
           <LeftNav isOpen={isLeftNavOpen} />
-          {/* <LeftNav isOpen={isLeftNavOpen} toggleNav={() => setIsLeftNavOpen(!isLeftNavOpen)} /> */}
         </div>
-
 
         <SliderCard />
       </div>
@@ -109,7 +107,7 @@ export default function Home() {
           <TopicsCard msg={topic} />
         </Link>
       ))}
-{/* </PasswordProvider> */}
+      {/* </PasswordProvider> */}
 
       {/* </LeftNavProvider> */}
     </>
