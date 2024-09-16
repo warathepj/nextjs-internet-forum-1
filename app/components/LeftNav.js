@@ -38,15 +38,17 @@ export default function LeftNav({ isOpen, toggleNav }) {
         <p>TOPICS</p>
         {topics.map(topic => (
           // <div className={styles.topicsCard}>
+          <div>
 
           <Link
+            // className={styles.topicsCard}
             key={topic}
             href={`/topics/${topic}`}
             onClick={() => setIsLeftNavOpen(false)}
           >
             <TopicsCard msg={topic} />
           </Link>
-          // </div>
+          </div>
         ))}
       </nav>
     </>

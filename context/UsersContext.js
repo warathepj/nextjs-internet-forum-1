@@ -45,6 +45,10 @@ const UsersProvider = ({ children }) => {
         {
           postId: "v2",
           comment: "Use an engine block heater to warm up the engine before starting, especially in extremely cold temperatures. This helps prevent excessive wear and tear."
+        },
+        {
+          postId: "s1",
+          comment: "Some models press and hold, some models press 2-3 buttons."
         }
       ] 
     },
@@ -61,6 +65,10 @@ const UsersProvider = ({ children }) => {
           postId: "g1",
           comment: "Being a clumsy person, I know myself that no matter what, I will definitely drop it on the floor. Normally we use Airpod Pro and put in an extra shockproof case.When I take it out and use it, it secretly falls off sometimes, but having said that, it holds up well.",
         },
+        {
+          postId: "s1",
+          comment: "Most of the time, press 2 times = cancel."
+        }
       ] 
     },
     { 
@@ -75,6 +83,10 @@ const UsersProvider = ({ children }) => {
         {
           postId: "g1",
           comment: "Used to be, but only very small ones. These days, Bluetooth has grown in size as well. with our ear grooves, making it firm but not easy to fall out Anyway, choose to look at the big ones."
+        },
+        {
+          postId: "s1",
+          comment: "Many brands can do it. But most people don't know."
         }
       ] 
     }

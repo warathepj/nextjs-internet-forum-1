@@ -1,6 +1,6 @@
-* {
+/* * {
   border: 1px solid red;
-}
+} */
 :root {
   --black: rgb(59, 47, 8);
   --orange: rgb(238, 185, 9);
@@ -8,6 +8,7 @@
 }
 body {
   /* position: relative; */
+  padding: .4rem;
   background-color: var(--black);
   color: var(--light-orange);
 }
@@ -32,7 +33,7 @@ a {
   position: fixed;
   top: -250px;
   left: 200px;
-  height: 800px;
+  height: 80rem;
   z-index: 2; /* Ensure it's above the main content but below the LeftNav */
 
   background-color: rgba(223, 95, 95, 0.5); /* Adjust opacity as needed */

@@ -19,6 +19,7 @@ export const PostsProvider = ({ children }) => {
     {
       id: "v2",
       room: "Vehicles",
+      sub: "Car",
       posterId: "2",
       topic: "What precautions should you take when using a car in extremely low temperatures such as the North Pole?",
       content: "",
@@ -27,6 +28,7 @@ export const PostsProvider = ({ children }) => {
     {
       id: "g1",
       room: "Gadgets",
+      sub: "Headphones",
       posterId: "2",
       topic: "Ask people who use bluetooth headphones. Have you ever dropped them on the floor?",
       content: "",
@@ -35,8 +37,9 @@ export const PostsProvider = ({ children }) => {
     {
       id: "s1",
       room: "Science",
+      sub: "Elevator",
       posterId: "2",
-      topic: "Ask people who use bluetooth headphones. Have you ever dropped them on the floor?",
+      topic: "Elevator Button",
       content: "Why was the elevator button designed so that it couldn't be canceled?Why is it like, press and press?that I've ever encountered- The person pressed the wrong button because they probably remembered the wrong class. But I pressed it. It's a bit of a waste of time.- Probably intentionally pressed the wrong button to tease me. (There's no one inside the elevator.) But the button is stuck on almost every floor. Parking on every floor is a waste of time.)thank you",
       image: "https://plus.unsplash.com/premium_photo-1664392193530-29b0545e39d5?q=80&w=1506&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     }

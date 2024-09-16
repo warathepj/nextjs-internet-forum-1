@@ -20,7 +20,7 @@ export default function Trend() {
 
   return (
     <div className={styles.container}>
-      <p>trend</p>
+      <p>Trend</p>
       <pre>
         {/* {post.room} */}
       </pre>
@@ -51,6 +51,8 @@ export default function Trend() {
         {posts.map(post => {
           const user = users.find(user => user.id === post.posterId);
           return (
+        <Link href={`/posts/${post.id}`}>
+
             <PostCard 
               key={post.id}
               id={post.id}  
@@ -63,6 +65,8 @@ export default function Trend() {
               content={post.content} 
               image={post.image} 
             />
+        </Link>
+
           )
         })}
       {/* </pre> */}

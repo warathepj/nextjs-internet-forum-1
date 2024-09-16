@@ -92,7 +92,7 @@ log context/UsersContext.js/users that users.id === post.posterId*/}
       {/* posterId */}
       
 
-      <p>Post ID: {postId}</p>
+      {/* <p>Post ID: {postId}</p> */}
       <PostCard id={post.id} avatar={poster.avatar} 
         name={poster.name}
         room={post.room} 
@@ -103,7 +103,7 @@ log context/UsersContext.js/users that users.id === post.posterId*/}
 
       <h2>Comments:</h2>
       <UserComment/>
-      <pre>@@@@@CommentCard with props@@@@@</pre>
+      {/* <pre>@@@@@CommentCard with props@@@@@</pre> */}
       {users.map(user => (
         user.comments.filter(comment => comment.postId === postId).map(comment => (
           <div>
@@ -125,7 +125,7 @@ log context/UsersContext.js/users that users.id === post.posterId*/}
         {/* // comments={user.comments.filter(comment => comment.postId === postId)}  */}
         {/* /> */}
       {/* ))} */}
-      <pre>@@@@@CommentCard with props@@@@@</pre>
+      {/* <pre>@@@@@CommentCard with props@@@@@</pre> */}
       
     </div>
   );

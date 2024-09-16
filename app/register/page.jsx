@@ -1,9 +1,13 @@
+// app/register/page.jsx/
+//from app/register/page.jsx/, after register, how to make session
 "use client"
 import { useRouter } from 'next/navigation';
 import { useAuth } from '../../context/AuthContext';
 
 export default function Register() {
     const router = useRouter();
+    
+    //from app/register/page.jsx/, how to session username to browser, use context.
     const { username, setUsername, registerUser } = useAuth();
 
     const handleUsernameChange = (event) => {
@@ -17,15 +21,39 @@ export default function Register() {
         }
         try {
             await registerUser({ username });
+            setUsername(username);
             router.push('/');
         } catch (error) {
             // Handle error
         }
     }
 
+    
+// ... 
+
+//from app/register/page.jsx/
+   try {
+    const response = await fetch('/api/auth/register', {
+        // where to insert async
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ username }),
+    });
+
+    if (response.ok) { 
+      router.push('/'); 
+    } else {
+      // Handle error
+    }
+  } catch (error) {
+    // Handle error
+  }
+  // ...
+
+
     return (
         <>
-            <p>register</p>
+            <p>Register</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username"

@@ -4,20 +4,26 @@ import Link from 'next/link';
 import styles from './Announce.module.css';
 import AnnounceCard from './AnnounceCard';
 import { useMessages } from '../../context/MessageContext';
+import { useAnnounce } from '../../context/AnnounceContext'; 
 
 export default function Announce() {
+  const { announcements } = useAnnounce();
+
   const { messages } = useMessages();
 
   return (
     <div className={styles.container}>
-      <p>Announce.js</p>
-      {messages.map(message => (
+      <p>Announce</p>
+      {announcements.map((announcement) => (
         <Link 
-          key={message.id} 
+          key={announcement.id} 
           // href={`/announce/${message.id}?content=${encodeURIComponent(message.content)}`}
-          href={`/announce/${message.id}`}
+          href={`/announce/${announcement.id}`}
         > 
-          <AnnounceCard msg={message.content} /> 
+          <AnnounceCard 
+            topic={announcement.topic} 
+            detail={announcement.detail} 
+          /> 
         </Link>
       ))}
 

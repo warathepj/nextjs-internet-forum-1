@@ -2,7 +2,8 @@
     text-decoration: none;
     color: var(--light-orange);
     background-color: #6d3c3c;
-  
+    padding: .3rem;
+    margin-bottom: .7rem;
   }
   .header {
     display: flex;
@@ -17,9 +18,11 @@
     align-items: center;
   }
   
-  .postInfo .poster {
-    margin: 5px 0; /* Adjust spacing as needed */
-  }
+  /* .poster { */
+    /* color: #000; */
+    /* background-color: #57c6e7; */
+    /*margin: 5px 0; /* Adjust spacing as needed */
+  /* } */
   
   .info {
     display: flex;
@@ -29,9 +32,16 @@
   .avatar {
       width: 50px; /* Adjust the size as needed */
       height: 50px;
+      margin-right: .4rem;
       border-radius: 50%; /* Makes the image circular */
       object-fit: cover; /* Ensures the image fills the circle without distortion */
     }
   .image {
     width: 100%;
+  }
+
+  .voteContainer {
+    margin-bottom: .7rem;
+    display: flex;
+    justify-content: space-around; 
   }

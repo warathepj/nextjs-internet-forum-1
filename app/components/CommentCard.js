@@ -7,13 +7,13 @@ import styles from './CommentCard.module.css';
 
 function CommentCard({ commenterName, avatar, comments }) {
   return (
-    <div>
+    <div className={styles.container}>
       <img src={avatar} alt="Avatar" 
         // className={styles.avatar} 
         className="avatar"  
       />
-      <p>Comment by: {commenterName}</p>
-      <p>comment: {comments}</p>
+      <p>{commenterName}</p>
+      <p>{comments}</p>
       
     </div>
   );

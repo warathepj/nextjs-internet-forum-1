@@ -23,6 +23,7 @@ import Nav from './components/Nav';
 import ClientWrapper from './client-wrapper';
 import Welcome from "./components/Welcome";
 import GotoTop from "./components/GotoTop";
+import Footer from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,6 +52,7 @@ export default function RootLayout({ children }) {
                           <Nav />
                           <Welcome />
                           {children}
+                          <Footer/>
                           <GotoTop />
                         </ClientWrapper>
                       </TopicsProvider>

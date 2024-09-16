@@ -1,5 +1,6 @@
 .container {
-    width: 200px;
+    width: 4rem;
+    height: 3rem;
     background-color: #72a4ee;
     display: flex;
     flex-direction: row;

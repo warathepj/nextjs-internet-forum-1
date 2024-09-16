@@ -1,42 +1,56 @@
 /* In LeftNav.module.css */
 .containerLnav {
-    z-index: 1;
+  z-index: 1;
   position: fixed;
   top: 0;
-  left: -250px; /* Initially off-screen */
-  width: 200px;
+  left: -250px;
+  /* Initially off-screen */
+  width: 11.8rem;
   height: 100%;
   padding: 5px;
 
   background-color: var(--orange);
-  transition: left 0.3s ease; /* Smooth transition */
+  transition: left 0.3s ease;
+  /* Smooth transition */
 }
 
 .containerLnav.open {
-  left: 0; /* Slide in when open */
+  left: 0;
+  /* Slide in when open */
 }
-.header { /* New class for the header section */
+
+.header {
+  /* New class for the header section */
   display: flex;
-  justify-content: flex-end; /* Push the <h3> to the right */
+  justify-content: flex-end;
+  /* Push the <h3> to the right */
 }
-.x { /* New class for the header section */
-  background-color: #fff;
+
+.x {
+  /* New class for the header section */
+  /* background-color: #fff; */
   width: 30px;
   height: 60px;
   display: flex;
-  justify-content: flex-end; 
-  
+  justify-content: flex-end;
+
 }
+
 .x:hover {
   cursor: pointer;
 }
 
 .topicsCard {
-  margin-top: 5px; 
-  padding-bottom: 30px;
-  height: 46px;
+  margin-top: .7rem;
+  padding: .3rem;
+  height: 2.3rem;
   /* padding-top: 2px;    */
   /* padding-bottom: 3px; */
-  background-color: #fff;
+  background-color: var(--light-orange);
+  
+}
+
+.topicsCard:hover {
+  background-color: var(--orange);
 
 }

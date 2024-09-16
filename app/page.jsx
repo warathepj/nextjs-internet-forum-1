@@ -1,7 +1,7 @@
 // app/page.jsx/
 'use client'
 import Link from 'next/link';
-import AnnounceCard from './components/AnnounceCard';
+import Announce from './components/Announce';
 // import Announce from './components/Announce';
 import TopicsCard from './components/TopicsCard';
 import LeftNav from './components/LeftNav';
@@ -88,7 +88,7 @@ export default function Home() {
       </div>
 
       <Trend />
-      <AnnounceCard />
+      <Announce />
       {/* {messages.map(message => (
         <Link 
           key={message.id} 

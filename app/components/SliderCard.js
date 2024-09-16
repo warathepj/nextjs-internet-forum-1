@@ -59,60 +59,48 @@ function SliderCard() {
 
   return (
     <div className={styles.container}>
-
-
-      {/* <pre>
-        {topThree.map(post => (
-          <div key={post.id} className={styles.test}>
-
-            <pre>{post.id}</pre>
-            <pre>{post.votes}</pre>
-          </div>
-        ))}
-      </pre> */}
-
       <Slider {...settings}>
-{/* //when click on app/components/SliderCard.js */}
-<Link href={`/posts/${topThree[0].id}`}> 
-        <div>
+        {/* //when click on app/components/SliderCard.js */}
+        <Link href={`/posts/${topThree[0].id}`}>
+          <div>
 
-          {/* go to route /posts/topThree[0].id*/}
-          {topThree.length > 0 && (
-            <div key={topThree[0].id} className={styles.slide}>
-              <img src={topThree[0].image} alt="Post Image"
-                className={styles.img} />
-              <p className={styles.topic}>{topThree[0].topic}</p>
+            {/* go to route /posts/topThree[0].id*/}
+            {topThree.length > 0 && (
+              <div key={topThree[0].id} className={styles.slide}>
+                <img src={topThree[0].image} alt="Post Image"
+                  className={styles.img} />
+                <p className={styles.topic}>{topThree[0].topic}</p>
 
-              <p>votes: {topThree[0].votes}</p>
-            </div>
-          )}
-        </div>
+                <p>votes: {topThree[0].votes}</p>
+              </div>
+            )}
+          </div>
         </Link>
 
-        <Link href={`/posts/${topThree[1].id}`}> 
-        <div>
-          {topThree.length > 0 && (
-            <div key={topThree[1].id} className={styles.slide}>
-              <img src={topThree[1].image} alt="Post Image"
-                className={styles.img} />
-              <p className={styles.topic}>{topThree[1].topic}</p>
-              <p>votes: {topThree[1].votes}</p>
-            </div>
-          )}
-        </div>
+        <Link href={`/posts/${topThree[1].id}`}>
+          <div>
+            {topThree.length > 0 && (
+              <div key={topThree[1].id} className={styles.slide}>
+                <img src={topThree[1].image} alt="Post Image"
+                  className={styles.img} />
+                <p className={styles.topic}>{topThree[1].topic}</p>
+                <p>votes: {topThree[1].votes}</p>
+              </div>
+            )}
+          </div>
         </Link>
 
-        <Link href={`/posts/${topThree[2].id}`}> 
-        <div>
-          {topThree.length > 0 && (
-            <div key={topThree[2].id} className={styles.slide}>
-              <img src={topThree[2].image} alt="Post Image"
-                className={styles.img} />
-              <p className={styles.topic}>{topThree[2].topic}</p>
-              <p>votes: {topThree[2].votes}</p>
-            </div>
-          )}
-        </div>
+        <Link href={`/posts/${topThree[2].id}`}>
+          <div>
+            {topThree.length > 0 && (
+              <div key={topThree[2].id} className={styles.slide}>
+                <img src={topThree[2].image} alt="Post Image"
+                  className={styles.img} />
+                <p className={styles.topic}>{topThree[2].topic}</p>
+                <p>votes: {topThree[2].votes}</p>
+              </div>
+            )}
+          </div>
         </Link>
         {/* //in app/components/SliderCard.js, when click  */}
 

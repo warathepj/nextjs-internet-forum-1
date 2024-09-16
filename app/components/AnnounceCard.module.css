@@ -1,5 +1,7 @@
 .container {
     background-color: #9c78f1;
+    padding: .4rem;
+    margin-bottom: .4rem;
 }
 
 .card {
