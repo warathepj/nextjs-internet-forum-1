@@ -35,6 +35,15 @@ export const PostsProvider = ({ children }) => {
       image: "https://images.unsplash.com/photo-1645020089405-ee44c2cd7c58?q=80&w=1422&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
+      id: "b1",
+      room: "Business",
+      sub: "Income",
+      posterId: "5",
+      topic: "How do I get 1000$ of passive income per month?",
+      content: "",
+      image: "https://images.unsplash.com/photo-1593672755342-741a7f868732?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
       id: "s1",
       room: "Science",
       sub: "Elevator",

@@ -9,11 +9,10 @@ function CommentCard({ commenterName, avatar, comments }) {
   return (
     <div className={styles.container}>
       <img src={avatar} alt="Avatar" 
-        // className={styles.avatar} 
         className="avatar"  
       />
       <p>{commenterName}</p>
-      <p>{comments}</p>
+      <p className={styles.comment}>{comments}</p>
       
     </div>
   );

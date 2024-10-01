@@ -8,19 +8,16 @@ export function AuthProvider({ children }) {
   const [username, setUsername] = useState('');
 
   const registerUser = async ({ username }) => {
-    // Implement your registration logic here
-    // For example:
-    // await api.register(username, password);
     setUsername(username);
   };
 
   return (
-    <AuthContext.Provider value={{ 
-      isLoggedIn, 
-      setIsLoggedIn, 
-      username, 
-      setUsername, 
-      registerUser 
+    <AuthContext.Provider value={{
+      isLoggedIn,
+      setIsLoggedIn,
+      username,
+      setUsername,
+      registerUser
     }}>
       {children}
     </AuthContext.Provider>

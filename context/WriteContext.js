@@ -1,10 +1,8 @@
 "use client";
 import { createContext, useContext, useState } from "react";
 
-// Create a context
 const WriteContext = createContext();
 
-// Create a provider component
 export const WriteProvider = ({ children }) => {
     const [topic, setTopic] = useState("");
     const [description, setDescription] = useState("");

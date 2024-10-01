@@ -1,14 +1,16 @@
 "use client"
 import Link from 'next/link';
+import { useContext } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { UserContext } from '../../context/UserContext';
+import { usePersistentUsername } from '../../context/PersistentUsernameContext';
 import Button from './Button';
 import styles from './Welcome.module.css'
 
 const Welcome = () => {
-  const { username } = useAuth();
+  const { username } = usePersistentUsername();
 
   return (
-
     <div>
       {username ? (
         <div>
@@ -20,19 +22,16 @@ const Welcome = () => {
               alt="avatar"
             />
             <div className={styles.button}>
-            <Link href="/write">
-
-              <Button
-                label="Write Post"
+              <Link href="/write">
+                <Button
+                  label="Write Post"
                 />
-                </Link>
+              </Link>
             </div>
           </div>
         </div>
-
       ) : (
         <p style={{ color: 'red' }}>Please register for a better user experience.</p>
-
       )}
     </div>
   )

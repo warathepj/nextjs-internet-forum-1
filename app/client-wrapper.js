@@ -1,12 +1,12 @@
 // app/client-wrapper.js
 'use client'; 
 import { LeftNavProvider } from '../context/LeftNavContext';
+import { LoginProvider } from '../context/LoginContext'; 
 import LeftNav from './components/LeftNav'; 
-import { LoginProvider } from '../context/LoginContext'; // Import LoginProvider
 
 export default function ClientWrapper({ children }) {
   return (
-    <LoginProvider> {/* Wrap with LoginProvider */}
+    <LoginProvider> 
       <LeftNavProvider>
         <LeftNav /> 
         {children} 

@@ -1,25 +1,26 @@
 // app/write/page/
-//if app/write/page/username = false, redirect to /register
 "use client"
 import { usePost } from "@/context/UserPostContext";
 import { useWriteContext } from "../../context/WriteContext";
-import { useAuth } from '../../context/AuthContext';
+import { usePersistentUsername } from '../../context/PersistentUsernameContext';
 import { useRouter } from 'next/navigation';
+import styles from './page.module.css'
 import Link from 'next/link';
 
 const Write = () => {
     const { topic, setTopic, description, setDescription } = useWriteContext();
-  const { username } = useAuth();
-  const router = useRouter();
+    const { username } = usePersistentUsername();
+    const router = useRouter();
 
-  if (!username) {
-    router.push('/register'); 
-    return null;
-  }
+    if (!username) {
+        router.push('/register');
+        return null;
+    }
 
     return (
         <div>
             <form
+                className={styles.form}
                 onSubmit={(e) => {
                     e.preventDefault();
                     console.log("Submitted topic:", topic);
@@ -27,6 +28,7 @@ const Write = () => {
                 }}
             >
                 <input
+                    style={{ marginBottom: ".4rem" }}
                     type="text"
                     value={topic}
                     onChange={(e) => setTopic(e.target.value)}
@@ -40,8 +42,8 @@ const Write = () => {
                     placeholder="Enter a description, Start a new line with '/'"
                 ></textarea>
                 <Link href="/user-post">
-                <button type="submit">Submit</button>
-</Link>
+                    <button type="submit">Submit</button>
+                </Link>
             </form>
         </div>
     )

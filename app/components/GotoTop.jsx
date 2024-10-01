@@ -17,10 +17,9 @@ const GotoTop = () => {
         right: '20px',
         cursor: 'pointer',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-
       }}
       onClick={scrollToTop}
-    >
+  >
       GotoTop
     </div>
   );

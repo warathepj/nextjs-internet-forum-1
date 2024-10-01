@@ -1,17 +1,15 @@
 /* app/components/Button.module.css/ */
-/* when hover  */
 .button {
-    background-color: var(--orange); /* Example background color */
-  
+    background-color: var(--orange);
     color: var(--light-orange);
     padding: 10px 20px;
     border: none;
     border-radius: 25px;
     cursor: pointer;
   }
+
   .button:hover {
     background-color: var(--light-orange);
     color: var(--orange);
     transition: all .6s ease;
-  
   }

@@ -1,8 +1,5 @@
 // app/components/Login.js/
 
-//from app/register/page.jsx/ and
-// context/AuthContext.js/, console.log("registerUser from login", registerUser)
-//in app/components/Login.js/
 "use client"
 import { useState, useContext } from 'react';
 import { useLogin } from '../../context/LoginContext';
@@ -11,7 +8,6 @@ import { PasswordContext } from '../../context/PasswordContext';
 import { usePassword } from '../../context/PasswordContext';
 import styles from './Login.module.css';
 import { useAuth } from '../../context/AuthContext';
-
 
 export default function Login() {
   const [user, setUser] = useState('User Name');
@@ -24,25 +20,11 @@ export default function Login() {
   console.log("password from login", password);
   const { isLoggedIn, setIsLoggedIn } = useAuth();
   console.log("isLoggedIn from login", isLoggedIn);
-  
-  //in app/components/Login.js/, set state of
-//to context/AuthContext.js/
-
-  // const { registerUser } = useContext(AuthContext);
 
   // console.log("registerUser from login", registerUser);
 
-  //from app/components/Login.js/
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
-    // setIsLoginOpen(false);
-    // ... your login logic (e.g., API call) ...
-    //setIsLoggedIn(true); // Set isLoggedIn to true after successful login
-    // if (!isLoggedIn) {
-    //   console.log("Incorrect username or password");
-    // }
-    
-    
+    event.preventDefault();
   };
 
   const handleLogin = () => {
@@ -52,10 +34,6 @@ export default function Login() {
     }
   };
 
-  
-  // if isLoggedIn = false; then alert "incorrect username or password"
-  
-
   return (
     <div className={styles.container}>
       <div className={styles.header}>
@@ -64,15 +42,13 @@ export default function Login() {
         </div>
       </div>
 
-{/* //from app/components/Login.js/ */}
-{isLoggedIn && (
+      {isLoggedIn && (
         <pre>logged in!!</pre>
       )}
-      {/* if isLoggedIn = false, render "not logged in" in pre tag */}
       {!isLoggedIn && (
         <pre>not logged in!!</pre>
       )}
-{/* //from app/components/Login.js/ */}
+
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -82,7 +58,6 @@ export default function Login() {
             id="username"
             value={user}
             onChange={(e) => setUser(e.target.value)}
-
             required
           />
         </div>
@@ -96,13 +71,10 @@ export default function Login() {
             required
           />
         </div>
-{/* //when press app/components/Login.js/ */}
         <button type="submit">Login</button>
-        {/* set isLoggedIn to true */}
         {errorMessage && <p className={styles.error}>{errorMessage}</p>}
       </form>
       <a href="/register">Register</a>
-
     </div>
   );
 }

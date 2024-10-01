@@ -12,10 +12,10 @@ export const PasswordProvider = ({ children }) => {
   const toggleLogin = () => {
     setIsLoginOpen(!isLoginOpen);
   };
-  const toggleLoginButton = () => { // Renamed function
+  const toggleLoginButton = () => { 
     setIsLoginButtonOpen(!isLoginButtonOpen);
   };
-  const toggleCreateButton = () => { // Renamed function
+  const toggleCreateButton = () => { 
     setIsCreateButtonOpen(!isCreateButtonOpen);
   };
   return (

@@ -1,13 +1,10 @@
-/* * {
-  border: 1px solid red;
-} */
 :root {
   --black: rgb(59, 47, 8);
   --orange: rgb(238, 185, 9);
   --light-orange: rgb(240, 232, 207);
 }
+
 body {
-  /* position: relative; */
   padding: .4rem;
   background-color: var(--black);
   color: var(--light-orange);
@@ -16,28 +13,23 @@ body {
 .login-warning {
   color: red;
 }
+
 a {
   text-decoration: none;
 }
-/* .nav {  */
-  /* position: absolute; */
-/* position: fixed; */
-/* }  */
 
 .hidden {
   display: none;
 }
 
 .overlay {
-  width: calc(100vw - 200px); 
+  width: calc(100vw - 200px);
   position: fixed;
   top: -250px;
   left: 200px;
   height: 80rem;
-  z-index: 2; /* Ensure it's above the main content but below the LeftNav */
-
-  background-color: rgba(223, 95, 95, 0.5); /* Adjust opacity as needed */
-
+  z-index: 2;
+  background-color: rgba(223, 95, 95, 0.5);
 }
 
 .overlay.active {
@@ -45,8 +37,8 @@ a {
 }
 
 .avatar {
-  width: 50px; /* Adjust the size as needed */
+  width: 50px;
   height: 50px;
-  border-radius: 50%; /* Makes the image circular */
-  object-fit: cover; /* Ensures the image fills the circle without distortion */
+  border-radius: 50%;
+  object-fit: cover;
 }

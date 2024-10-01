@@ -1,28 +1,22 @@
 /* app/page.module.css */
 
-/* .leftNav {
-  z-index: 10;
-} */
-/* .sliderCard {
-  position: absolute;
-} */
 .login {
-  width: calc(100vw - 200px); 
+  width: calc(100vw - 200px);
   position: fixed;
   top: -250px;
   left: 200px;
   height: 800px;
-  z-index: 2; /* Ensure it's above the main content but below the LeftNav */
+  z-index: 2;
 }
+
 .loginAlert {
-  width: calc(100vw - 200px); 
+  width: calc(100vw - 200px);
   position: fixed;
   top: -550px;
   left: 300px;
   height: 500px;
-  z-index: 10; /* Ensure it's above the main content but below the LeftNav */
+  z-index: 10;
 }
-
 
 .main {
   display: flex;
@@ -134,7 +128,7 @@
 .logo {
   position: relative;
 }
-/* Enable hover only on non-touch devices */
+
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     background: rgba(var(--card-rgb), 0.1);
@@ -152,7 +146,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 700px) {
   .content {
     padding: 4rem;
@@ -205,11 +198,9 @@
     border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
-    background: linear-gradient(
-      to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
-    );
+    background: linear-gradient(to bottom,
+        rgba(var(--background-start-rgb), 1),
+        rgba(var(--callout-rgb), 0.5));
     background-clip: padding-box;
     backdrop-filter: blur(24px);
   }
@@ -220,16 +211,13 @@
     inset: auto 0 0;
     padding: 2rem;
     height: 200px;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgb(var(--background-end-rgb)) 40%);
     z-index: 1;
   }
 }
 
-/* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
@@ -250,9 +238,8 @@
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
 }
-
-

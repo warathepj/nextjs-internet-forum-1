@@ -1,10 +1,8 @@
 .container {
-    /* background-color: var(--black); */
     margin-top: 20px;
 }
-/* app/components/Trend.module.css */
-/* PostCard.module.css */
-.postCard { /* Or target a specific element within PostCard */
+
+.postCard { 
   cursor: pointer;
 }
 

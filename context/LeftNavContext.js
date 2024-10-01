@@ -1,9 +1,7 @@
 'use client'
 
-// Create a context
 import { createContext, useContext, useState } from 'react';
 const LeftNavContext = createContext();
-// Provider component
 function LeftNavProvider({ children }) {
   const [isLeftNavOpen, setIsLeftNavOpen] = useState(false);
   return (
@@ -14,7 +12,7 @@ function LeftNavProvider({ children }) {
 }
 
 export function useLeftNav() {
-    return useContext(LeftNavContext);
-  }
+  return useContext(LeftNavContext);
+}
 
-  export { LeftNavProvider };
+export { LeftNavProvider };

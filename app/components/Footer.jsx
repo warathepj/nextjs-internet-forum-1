@@ -38,7 +38,6 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     padding: '20px',
-    // backgroundColor: 'white',
     color: '#fff',
   },
 

@@ -1,13 +1,60 @@
 .container {
   padding: .2rem;
-  margin-bottom: .4rem;;
+  margin-bottom: .4rem;
   background-color: var(--orange);
   color: var(--light-orange);
 }
 
 .avatar {
-    width: 50px; /* Adjust the size as needed */
-    height: 50px;
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image fills the circle without distortion */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.comment {
+  width: 22.4rem;
+  word-wrap: break-word;
+}
+
+@media (max-width: 347px) {
+  .comment {
+    width: 17rem;
   }
+}
+
+@media (min-width: 535px) {
+  .comment {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 765px) {
+  .comment {
+    width: 43rem;
+  }
+}
+
+@media (min-width: 850px) {
+  .comment {
+    width: 49rem;
+  }
+}
+
+@media (min-width: 910px) {
+  .comment {
+    width: 54rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  .comment {
+    width: 59rem;
+  }
+}
+
+@media (min-width: 1276px) {
+  .comment {
+    width: 74rem;
+  }
+}

@@ -31,17 +31,15 @@ export default function LeftNav({ isOpen, toggleNav }) {
     <>
       <nav className={`${styles.containerLnav} ${isOpen ? styles.open : ''}`}>
         <div className={styles.header} onClick={handleHeaderClick}>
-          <div className={styles.x}> {/* Wrap <h3> in a div with the new class */}
+          <div className={styles.x}> 
             <h3>X</h3>
           </div>
         </div>
         <p>TOPICS</p>
         {topics.map(topic => (
-          // <div className={styles.topicsCard}>
           <div>
 
           <Link
-            // className={styles.topicsCard}
             key={topic}
             href={`/topics/${topic}`}
             onClick={() => setIsLeftNavOpen(false)}

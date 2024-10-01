@@ -1,47 +1,138 @@
 .container {
-    text-decoration: none;
-    color: var(--light-orange);
-    background-color: #6d3c3c;
-    padding: .3rem;
-    margin-bottom: .7rem;
-  }
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  /* In your PostCard.module.css file */
-  
-  .postInfo { 
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  /* .poster { */
-    /* color: #000; */
-    /* background-color: #57c6e7; */
-    /*margin: 5px 0; /* Adjust spacing as needed */
-  /* } */
-  
-  .info {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .avatar {
-      width: 50px; /* Adjust the size as needed */
-      height: 50px;
-      margin-right: .4rem;
-      border-radius: 50%; /* Makes the image circular */
-      object-fit: cover; /* Ensures the image fills the circle without distortion */
-    }
-  .image {
-    width: 100%;
+  text-decoration: none;
+  color: var(--light-orange);
+  background-color: #6d3c3c;
+  padding: .3rem;
+  margin-bottom: .7rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.postInfo {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  margin-right: .4rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.image {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.voteContainer {
+  margin-bottom: .7rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.topic {
+  width: 20rem;
+  word-wrap: break-word;
+}
+
+.paragraph {
+  width: 20rem;
+  word-wrap: break-word;
+}
+
+@media (max-width: 347px) {
+  .topic {
+    width: 17rem;
   }
 
-  .voteContainer {
-    margin-bottom: .7rem;
-    display: flex;
-    justify-content: space-around; 
+  .paragraph {
+    width: 17rem;
   }
+}
+
+@media (min-width: 535px) {
+  .topic {
+    width: 30rem;
+  }
+
+  .paragraph {
+    width: 30rem;
+  }
+}
+
+@media (min-width: 765px) {
+  .paragraph {
+    width: 42rem;
+  }
+}
+
+@media (min-width: 850px) {
+  .topic {
+    width: 49rem;
+  }
+
+  .paragraph {
+    width: 49rem;
+  }
+}
+
+@media (min-width: 910px) {
+  .topic {
+    width: 54rem;
+  }
+
+  .paragraph {
+    width: 54rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  .topic {
+    width: 59rem;
+  }
+
+  .paragraph {
+    width: 59rem;
+  }
+
+  .image {
+    width: 40rem;
+
+  }
+}
+
+@media (min-width: 1276px) {
+  .topic {
+    width: 74rem;
+  }
+
+  .paragraph {
+    width: 74rem;
+  }
+
+}
+
+@media (min-width: 1362px) {
+  .topic {
+    width: 494px;
+  }
+
+  .paragraph {
+    width: 494px;
+  }
+
+}

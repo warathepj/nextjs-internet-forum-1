@@ -1,12 +1,9 @@
-
-
 // app/layout/
-
-//from app/layout/ initial hide <UserProfile />
 
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from '../context/AuthContext';
+import { UserProvider } from '../context/UserContext';
 import { AnnounceProvider } from '../context/AnnounceContext';
 import { MessageProvider } from '../context/MessageContext';
 import { TopicsProvider } from '../context/TopicsContext';
@@ -17,10 +14,10 @@ import { UsersProvider } from '../context/UsersContext';
 import { CommentProvider } from '../context/UserCommentContext';
 import { UserCommentContext } from '../context/UserCommentContext';
 import { WriteProvider } from "../context/WriteContext";
-
+import { PersistentUsernameProvider } from '../context/PersistentUsernameContext';
 import { Providers } from './providers';
-import Nav from './components/Nav';
 import ClientWrapper from './client-wrapper';
+import Nav from './components/Nav';
 import Welcome from "./components/Welcome";
 import GotoTop from "./components/GotoTop";
 import Footer from "./components/Footer";
@@ -36,36 +33,39 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <WriteProvider>
-
-      <PostProvider>
-      <CommentProvider>
-        <Providers>
-          <AuthProvider>
-            <PasswordProvider>
-              <UsersProvider>
-                <PostsProvider>
-                  <AnnounceProvider>
-                    <MessageProvider>
-                      <TopicsProvider>
-                        <ClientWrapper>
-                          <Nav />
-                          <Welcome />
-                          {children}
-                          <Footer/>
-                          <GotoTop />
-                        </ClientWrapper>
-                      </TopicsProvider>
-                    </MessageProvider>
-                  </AnnounceProvider>
-                </PostsProvider>
-              </UsersProvider>
-            </PasswordProvider>
-          </AuthProvider>
-        </Providers>
-        </CommentProvider>
-        </PostProvider>
-        </WriteProvider>
+        <PersistentUsernameProvider>
+          <WriteProvider>
+            <PostProvider>
+              <CommentProvider>
+                <Providers>
+                  <AuthProvider>
+                    <UserProvider>
+                      <PasswordProvider>
+                        <UsersProvider>
+                          <PostsProvider>
+                            <AnnounceProvider>
+                              <MessageProvider>
+                                <TopicsProvider>
+                                  <ClientWrapper>
+                                    <Nav />
+                                    <Welcome />
+                                    {children}
+                                    <Footer />
+                                    <GotoTop />
+                                  </ClientWrapper>
+                                </TopicsProvider>
+                              </MessageProvider>
+                            </AnnounceProvider>
+                          </PostsProvider>
+                        </UsersProvider>
+                      </PasswordProvider>
+                    </UserProvider>
+                  </AuthProvider>
+                </Providers>
+              </CommentProvider>
+            </PostProvider>
+          </WriteProvider>
+        </PersistentUsernameProvider>
 
       </body>
     </html>

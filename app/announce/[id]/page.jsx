@@ -1,6 +1,5 @@
 // app/announce/[id]/page/
-//from app/announce/[id]/page/ and context/AnnounceContext
-// render announcements topic that have id === params.id
+
 'use client'
 
 import React, { useContext } from 'react';

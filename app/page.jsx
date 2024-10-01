@@ -2,7 +2,6 @@
 'use client'
 import Link from 'next/link';
 import Announce from './components/Announce';
-// import Announce from './components/Announce';
 import TopicsCard from './components/TopicsCard';
 import LeftNav from './components/LeftNav';
 import Login from './components/Login';
@@ -29,14 +28,13 @@ export default function Home() {
   const { messages } = useMessages();
   const { topics } = useTopics();
   const { isLeftNavOpen, setIsLeftNavOpen } = useLeftNav();
-  console.log("isLeftNavOpen : ", isLeftNavOpen);
+  // console.log("isLeftNavOpen : ", isLeftNavOpen);
   const { isLoginOpen, setIsLoginOpen } = useLogin();
   const { isLoggedIn, setIsLoggedIn } = useAuth();
-  console.log("////////////isLoggedIn////////// : ", isLoggedIn);
+  // console.log("////////////isLoggedIn////////// : ", isLoggedIn);
   // const { passwords } = useContext(PasswordContext);
   const { passwords } = usePassword();
   // console.log("passwords : ", passwords);
-  // const { users } = useContext(UsersContext);
   const { users } = useUsers();
   // In your parent component or a utility function
   function toggleBodyScrolling(disable) {
@@ -54,28 +52,10 @@ export default function Home() {
     toggleBodyScrolling(!isLeftNavOpen); // Pass the opposite of the current state
   }
 
-
   return (
     <>
-      {/* <div>
-  {isLoggedIn ? (
-    <div>Welcome, user!</div> 
-  ) : (
-    <div>Please log in.</div>
-  )}
-</div> */}
-
-      {/* //from app/page.js/ 
-       isLoggedIn is boolean, how to render */}
-      {/* <pre>isLoggedIn : {isLoggedIn}</pre> */}
-      {/* {!isLoggedIn && <LoginWarning />} */}
       <div className={styles.loginAlert}>
-
       </div>
-      {/* {isLoginOpen && <Login />} */}
-      {/* </div> */}
-      {/* <Login isOpen={isLoginOpen} /> */}
-
       {isLeftNavOpen && (
         <div className="overlay"></div>
       )}
@@ -83,21 +63,12 @@ export default function Home() {
         <div className={styles.leftNav}>
           <LeftNav isOpen={isLeftNavOpen} />
         </div>
-
         <SliderCard />
       </div>
 
       <Trend />
       <Announce />
-      {/* {messages.map(message => (
-        <Link 
-          key={message.id} 
-          href={`/announce/${message.id}`}
-        > 
-          <AnnounceCard msg={message.content} /> 
-        </Link>
-      ))} */}
-
+     
       <h4>TOPICS</h4>
       {topics.map(topic => (
         <Link
@@ -107,9 +78,6 @@ export default function Home() {
           <TopicsCard msg={topic} />
         </Link>
       ))}
-      {/* </PasswordProvider> */}
-
-      {/* </LeftNavProvider> */}
     </>
   );
 }

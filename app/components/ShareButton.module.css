@@ -1,8 +1,7 @@
 .container {
-    width: .4rem;
-    background-color: #72a4ee;
-    display: flex;
-    justify-content: center; /* Distribute space around elements */
-  /*align-items: center;  Vertically center elements */
+  width: .4rem;
+  background-color: #72a4ee;
+  display: flex;
+  justify-content: center;
   padding: 2px;
 }

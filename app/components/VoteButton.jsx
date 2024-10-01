@@ -1,6 +1,6 @@
 // app/components/VoteButton.js
 import { useState } from 'react';
-import { useAuth } from '../../context/AuthContext';
+import { usePersistentUsername } from '../../context/PersistentUsernameContext';
 import ArrowUp from './(icon)/ArrowUp';
 import ArrowDown from './(icon)/ArrowDown';
 import Link from 'next/link';
@@ -9,7 +9,7 @@ import styles from './VoteButton.module.css';
 export default function VoteButton({ id }) {
   const [count, setCount] = useState(Math.floor(Math.random() * 1000)); // Initialize count state
   const [hasVoted, setHasVoted] = useState(false);
-  const { username } = useAuth();
+  const { username } = usePersistentUsername();
 
   const handleUpvote = () => {
     if (!hasVoted) { // Check if already voted
@@ -17,6 +17,7 @@ export default function VoteButton({ id }) {
       setHasVoted(true); // Mark as voted
     }
   };
+
   const handleDownvote = () => {
     if (!hasVoted) { // Check if already voted
       setCount(count - 1);
@@ -27,19 +28,10 @@ export default function VoteButton({ id }) {
   if (username) {
     return (
       <div className={styles.container}>
-        {/* //in app/components/VoteButton.js */}
-        {/* if isLoggedIn is true, can click two button,
- else render Please register !!*/}
         <button className={styles.arrow} onClick={handleUpvote} disabled={hasVoted}>
           <ArrowUp />
         </button>
-
-        {/*from app/components/VoteButton.js initial render */}
         <p>{id === 'user' ? 0 : count}</p>
-
-        {/* <p>{count}</p> */}
-{/* if id="user", render 0 */}
-
         <button className={styles.arrow} onClick={handleDownvote} disabled={hasVoted}>
           <ArrowDown />
         </button>
@@ -52,7 +44,7 @@ export default function VoteButton({ id }) {
       <p
         style={{ fontSize: '.8rem' }}
       >
-        Please 
+        Please
         <Link
           href="/register"
         >

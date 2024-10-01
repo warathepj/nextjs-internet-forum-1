@@ -1,5 +1,3 @@
-// Suggested code may be subject to a license. Learn more: ~LicenseLog:1904957916.
-
 // context/LoginContext.js
 'use client';
 import { createContext, useState, useContext } from 'react';
